@@ -27,10 +27,10 @@
 
   $(document).ready(function (){
 
-    $(".navbar-toggler, .overlay").on("click", function(){
+    $(".sidebar-toggler").on("click", function(){
 
-      console.log("click");
-      $(".mobile-menu, .overlay").toggleClass("open");
+      $(".sidenav").toggleClass("closed");
+      $(".main").toggleClass("extended");
     });
 
   });

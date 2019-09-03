@@ -1,35 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+body {
+    overflow-x: hidden;
+  }
 
 @media(max-width: 992px){
-    .mobile-menu{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        transform: translateX(-100%);
-        transition: all ease 0.25s;
-    }
 
-    .mobile-menu.open{
-        transform: translateX(0);  
-    }
-
-    .overlay{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        display: none;
-        background-color: darkgrey;
-    }
-
-    .overlay.open{
-        display: block;
+    .sidebar{
+        display: none !important;
     }
 }
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transform: translateX(0);
+    transition: all ease 0.25s;
+    background-color: #343a40;
+} */
+
+/* .sidebar.closed{
+    transform: translateX(-100%);  
+} */
+
+
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: all ease 0.3s; 
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+    text-decoration: none;
+  }
+  
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    transition: all ease 0.3s;
+  }
+  
+  @media screen and (max-width: 768px) {
+
+    .sidenav{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main{
+        margin-left: 10px;
+        margin-top: auto;
+        position: relative;
+    }
+  }
+
+  .sidenav.closed{
+    transform: translateX(-100%);
+    transition: all ease 0.3s; 
+}
+
+.main.extended{
+    margin-left: 0;
+    transform: translateX(0);
+    transition: all ease 0.3s;
+}
+
+.sidebar-toggler{
+    margin-left: 160px;
+}
+
+
 
 
 
