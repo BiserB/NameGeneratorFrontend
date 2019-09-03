@@ -23,6 +23,21 @@
     crossorigin="anonymous"></script>
 </head>
 
+<script>
+
+  $(document).ready(function (){
+
+    $(".navbar-toggler, .overlay").on("click", function(){
+
+      console.log("click");
+      $(".mobile-menu, .overlay").toggleClass("open");
+    });
+
+  });
+
+
+</script>
+
 <body>
   <app-root></app-root>
 </body>
