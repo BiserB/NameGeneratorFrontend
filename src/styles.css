@@ -25,73 +25,79 @@ body {
     transform: translateX(-100%);  
 } */
 
-
 body {
-    font-family: "Lato", sans-serif;
-  }
-  
-  .sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
-    transition: all ease 0.3s; 
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-    text-decoration: none;
-  }
-  
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-    transition: all ease 0.3s;
-  }
-  
-  @media screen and (max-width: 768px) {
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+}
 
-    .sidenav{
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;    
+  overflow-x: hidden;
+  transition: all ease 0.3s;
+  background-color: #111;
+}
 
-    .main{
-        margin-left: 10px;
-        margin-top: auto;
-        position: relative;
-    }
-  }
+.sidebar.folded{
+  transform: translateX(-100%);
+  transition: all ease 0.3s; 
+}
 
-  .sidenav.closed{
-    transform: translateX(-100%);
-    transition: all ease 0.3s; 
+.main {
+  margin: 0 0 0 200px;/* Same as the width of the sidenav */
+  padding: 0px;
+  transition: all ease 0.3s;
 }
 
 .main.extended{
-    margin-left: 0;
-    transform: translateX(0);
-    transition: all ease 0.3s;
+  margin-left: 0;
+  transform: translateX(0);
+  transition: all ease 0.3s;
 }
 
-.sidebar-toggler{
-    margin-left: 160px;
+/* .sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
 }
+
+.sidebar a:hover {
+  color: #f1f1f1;
+  text-decoration: none;
+} */
+
+@media screen and (max-width: 680px) {
+
+  .sidebar{
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+
+  .sidebar.folded{
+    max-height: 0px;
+  }
+
+  .main{
+      margin-left: 0px;
+      margin-top: auto;
+      position: relative;
+  }
+
+}
+
+.dropdown-menu {
+  position: static;
+  float: none;
+}
+
+
 
 
 
