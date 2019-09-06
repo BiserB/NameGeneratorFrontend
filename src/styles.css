@@ -28,6 +28,8 @@ body {
 body {
   overflow-x: hidden;
   font-family: "Lato", sans-serif;
+  color: #73879C;
+  background: #F7F7F7;
 }
 
 .sidebar {
@@ -39,7 +41,7 @@ body {
   width: 200px;    
   overflow-x: hidden;
   transition: all ease 0.3s;
-  background-color: #111;
+  background-color: #2A3F54;
 }
 
 .sidebar.folded{
@@ -59,7 +61,7 @@ body {
   transition: all ease 0.3s;
 }
 
-/* .sidebar a {
+.sidebar a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
@@ -70,7 +72,7 @@ body {
 .sidebar a:hover {
   color: #f1f1f1;
   text-decoration: none;
-} */
+} 
 
 @media screen and (max-width: 680px) {
 
@@ -97,6 +99,37 @@ body {
   float: none;
 }
 
+/***************  Top navbar  *************/
+
+#topnav{
+  padding: 0px;
+  background:#EDEDED;
+  border-bottom: 1px solid#D9DEE4;
+}
+
+ul.topnav-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.topnav-nav > li {
+  display: inline;
+}
+
+.topnav-nav > li > a{
+  display: inline-block;
+  padding: 16px;
+  font-size: 25px;  
+  text-decoration: none;
+  color: #73879C; 
+}
+
+.topnav-nav > li > a:hover{
+  background-color: #D9DEE4;
+  text-decoration: none;
+}
 
 
 

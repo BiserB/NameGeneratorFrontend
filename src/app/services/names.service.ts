@@ -13,4 +13,9 @@ export class NamesService {
 
       return this.http.get<string[]>("https://localhost:55000/home/getname");
    }
+
+   getNames2(){
+
+    return this.http.get<string[]>("https://localhost:55000/api/names/fetch");
+  }
 }

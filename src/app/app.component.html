@@ -1,70 +1,68 @@
+<div class="sidebar">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
 
-  
 
-  <div class="sidebar">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
-
-  
-    <div class="nav flex-column">
-      <div>
-        <a class="nav-link active" href="#">Active</a>
-      </div>
-      <div>
-        <a class="nav-link" href="#">Link</a>
-      </div>
-      <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-          aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu dropdown-menu-custom">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </div>
-           
-      <div>
-          <a class="nav-link" href="#">Link</a>
-        </div>
+  <div class="nav flex-column">
+    <div>
+      <a class="nav-link active" href="#">Active</a>
     </div>
-  
+    <div>
+      <a class="nav-link" href="#">Link</a>
+    </div>
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+        aria-expanded="false">Dropdown</a>
+      <div class="dropdown-menu dropdown-menu-custom">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div>
+
+    <div>
+      <a class="nav-link" href="#">Link</a>
+    </div>
   </div>
-  
-  
-  <div class="main">
-    
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-          <button class="sidebar-toggler mr-auto" type="button" >
-              <span class="navbar-toggler-icon bg-dark"></span>
-            </button>
-    
-          <a class="navbar-brand mr-auto" href="#">Navbar</a> 
-          
-              <div class="row">
-                  <li class="nav-item ">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </div>
-            
-        </nav>
+</div>
 
-        <app-main></app-main>
+
+<div class="main">
+
+  <nav id="topnav" class="navbar navbar-expand-lg">
+
+    <button class="sidebar-toggler mr-auto" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+    <div class="row">
+
+      <ul class="topnav-nav mr-auto">
+        <li>
+          <a href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a href="#">Features</a>
+        </li>
+        <li>
+          <a href="#">SIGN IN</a>
+        </li>
+      </ul>
 
     </div>
+
+  </nav>
+
+  <app-main></app-main>
+
+</div>
 
 
 <router-outlet></router-outlet>
