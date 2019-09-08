@@ -1,5 +1,17 @@
 <strong>
-  Names:
+  Usernames:
 </strong>
 
 <p *ngFor="let name of names">{{ name }}</p>
+
+<p>Pass : "PASSword@123"</p>
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  Username:<br>
+  <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+  <br>
+  Password:<br>
+  <input type="text" name="password" [(ngModel)]="loginModel.password" required>
+  <br><br>
+  <input type="submit" [disabled]="!f.valid" value="Submit">
+</form> 
