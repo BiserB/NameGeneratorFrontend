@@ -19,11 +19,7 @@ export class MainComponent implements OnInit, OnDestroy {
   constructor(private namesService: NamesService, private authService: AuthService) { }
 
   ngOnInit() {
-
-    this.subscription.add(this.namesService.getNames()
-      .subscribe(res => {
-        this.names = res;
-      }));
+    
   }
 
   onSubmit(){
@@ -37,6 +33,14 @@ export class MainComponent implements OnInit, OnDestroy {
       error => {
         console.log("error..", error)
       });
+  }
+
+  onFetch(){
+
+    this.subscription.add(this.namesService.getNames()
+      .subscribe(res => {
+        this.names = res;
+      }));
   }
 
   ngOnDestroy() {

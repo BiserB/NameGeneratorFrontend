@@ -1,8 +1,3 @@
-<strong>
-  Usernames:
-</strong>
-
-<p *ngFor="let name of names">{{ name }}</p>
 
 <p>Pass : "PASSword@123"</p>
 
@@ -14,4 +9,12 @@
   <input type="text" name="password" [(ngModel)]="loginModel.password" required>
   <br><br>
   <input type="submit" [disabled]="!f.valid" value="Submit">
-</form> 
+</form>
+
+<form #fetch="ngForm" (ngSubmit)="onFetch()">  
+  <input type="submit" value="Fetch">
+</form>
+<strong>
+  Usernames:
+</strong>
+<p *ngFor="let name of names">{{ name }}</p>
