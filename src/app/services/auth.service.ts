@@ -11,6 +11,6 @@ export class AuthService {
 
   login(model: LoginModel){
 
-    return this.http.post("https://localhost:55000/api/auth/login", model);
+    return this.http.post("https://localhost:55000/api/auth/login", model, { withCredentials: true });
   }
 }
