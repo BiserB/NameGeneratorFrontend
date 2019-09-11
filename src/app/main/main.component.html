@@ -1,20 +1,25 @@
+<div class="container">
 
-<p>Pass : "PASSword@123"</p>
-
-<form #f="ngForm" (ngSubmit)="onSubmit()">
-  Username:<br>
-  <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
+    Username: pesho<br>
+    <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+    <br>
+    <br>
+    Password: PASSword@123<br>
+    <input type="text" name="password" [(ngModel)]="loginModel.password" required>
+    <br><br>
+    <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
+  </form>
   <br>
-  Password:<br>
-  <input type="text" name="password" [(ngModel)]="loginModel.password" required>
-  <br><br>
-  <input type="submit" [disabled]="!f.valid" value="Submit">
-</form>
+  <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
+  <br>
+  <br>
+  <form #fetch="ngForm" (ngSubmit)="onFetch()">  
+    <input type="submit" value="Fetch">
+  </form>
+  <strong>
+    Usernames:
+  </strong>
+  <p *ngFor="let name of names">{{ name }}</p>
 
-<form #fetch="ngForm" (ngSubmit)="onFetch()">  
-  <input type="submit" value="Fetch">
-</form>
-<strong>
-  Usernames:
-</strong>
-<p *ngFor="let name of names">{{ name }}</p>
+</div>

@@ -35,6 +35,18 @@ export class MainComponent implements OnInit, OnDestroy {
       });
   }
 
+  onLogout(){
+
+    this.subscription.add(
+      this.authService.logout()
+        .subscribe(
+          res => {
+            
+          }
+        )
+      );
+  }
+
   onFetch(){
 
     this.subscription.add(this.namesService.getNames()
