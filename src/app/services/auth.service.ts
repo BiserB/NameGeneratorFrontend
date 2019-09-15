@@ -16,6 +16,6 @@ export class AuthService {
 
   logout(){
 
-    return this.http.post("https://localhost:50000/api/auth/logout", { withCredentials: true });
+    return this.http.post("https://localhost:50000/api/auth/logout", null, { withCredentials: true });
   }
 }
