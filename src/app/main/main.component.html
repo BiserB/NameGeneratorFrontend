@@ -1,7 +1,7 @@
 <div class="container">
 
   <form #f="ngForm" (ngSubmit)="onSubmit()">
-    Username: pesho<br>
+    Username: Admin<br>
     <input type="text" name="username" [(ngModel)]="loginModel.username" required>
     <br>
     <br>
@@ -18,8 +18,15 @@
     <input type="submit" value="Fetch">
   </form>
   <strong>
-    Male First names:
+    Usernames:
   </strong>
   <p *ngFor="let name of names">{{ name }}</p>
 
+  <br>
+  <br>
+
+  <button class="btn btn-info" (click)="onCreate()">Create Random Name</button>
+  <p>{{ randomName }}</p>
+
 </div>
+

@@ -15,6 +15,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   names: string[] = [];
   loginModel: LoginModel = new LoginModel();
+  randomName: string = "zzz";
 
   constructor(private namesService: NamesService, private authService: AuthService) { }
 
@@ -23,8 +24,6 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(){
-    console.log("username..", this.loginModel.username);
-    console.log("password..", this.loginModel.password);
 
     this.authService.login(this.loginModel)
       .subscribe(res => {
@@ -52,6 +51,15 @@ export class MainComponent implements OnInit, OnDestroy {
     this.subscription.add(this.namesService.getNames()
       .subscribe(res => {
         this.names = res;
+      }));
+  }
+
+  onCreate(){
+
+    this.subscription.add(this.namesService.createName()
+      .subscribe(res => {
+        this.randomName = res;
+        console.log("randomName..", this.randomName);
       }));
   }
 

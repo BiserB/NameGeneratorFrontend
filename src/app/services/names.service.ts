@@ -14,4 +14,9 @@ export class NamesService {
       return this.http.get<string[]>("https://localhost:50000/api/values/fetch", { withCredentials: true });
    }
 
+   createName(){
+
+    return this.http.get<string>("https://localhost:50000/api/values/create", { withCredentials: true });
+ }
+
 }
