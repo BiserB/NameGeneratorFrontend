@@ -1,0 +1,23 @@
+/*********** Title ***********/
+
+.names-navbar{
+    border-bottom: 2px solid lightgray;
+    padding: 1px 5px 6px;
+}
+
+.names-navbar h2{
+    margin: 5px 0 6px;
+    float: left;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.names-navbar .toolbox{
+    min-width: 70px;
+    float: right;
+    list-style: none;
+}
+    
