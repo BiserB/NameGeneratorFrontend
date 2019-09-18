@@ -54,12 +54,21 @@ export class MainComponent implements OnInit, OnDestroy {
       }));
   }
 
-  onCreate(){
+  onCreateName(){
 
     this.subscription.add(this.namesService.createName()
       .subscribe(res => {
         this.randomName = res;
         console.log("randomName..", this.randomName);
+      }));
+  }
+
+  onCreateNames(){
+
+    this.subscription.add(this.namesService.createNames(5)
+      .subscribe(res => {
+        this.names = res;
+        console.log("res..", res);
       }));
   }
 

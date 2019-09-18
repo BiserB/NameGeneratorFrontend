@@ -1,57 +1,34 @@
 <div class="content">
 
-  <form #f="ngForm" (ngSubmit)="onSubmit()">
-    Username: Admin<br>
-    <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+  <div > 
+
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+      Username: Admin<br>
+      <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+      <br>
+      <br>
+      Password: PASSword@123<br>
+      <input type="text" name="password" [(ngModel)]="loginModel.password" required>
+      <br><br>
+      <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
+    </form>
+    <br>
+    <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
     <br>
     <br>
-    Password: PASSword@123<br>
-    <input type="text" name="password" [(ngModel)]="loginModel.password" required>
-    <br><br>
-    <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
-  </form>
-  <br>
-  <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
-  <br>
-  <br>
-  <form #fetch="ngForm" (ngSubmit)="onFetch()">  
-    <input type="submit" value="Fetch">
-  </form>
-  <strong>
-    Usernames:
-  </strong>
-  <p *ngFor="let name of names">{{ name }}</p>
-
-  <br>
-  <br>
-
-  <button class="btn btn-info" (click)="onCreate()">Create Random Name</button>
-  <p>{{ randomName }}</p>
-
-  <div class="row">
-
-    <div class="col-md-4 col-sm-12">
-
-      <div class="names-navbar">
-        <h2>Top Profiles</h2>
-        <ul class="toolbox">
-          <li>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <div class="clearfix"></div>
-      </div>
-
-    </div>
+    <form #fetch="ngForm" (ngSubmit)="onFetch()">  
+      <input type="submit" value="Fetch">
+    </form>
+    <strong>
+      Usernames:
+    </strong>
+    <p *ngFor="let name of names">{{ name }}</p>
+  
+    <br>
+    <br>
+  
+    <button class="btn btn-info" (click)="onCreateName()">Create Random Name</button>
+    <p>{{ randomName }}</p>
 
   </div>
 
@@ -65,12 +42,11 @@
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown
@@ -82,26 +58,17 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        
+        
       </div>
     </nav>
 
   </div>
 
-
-
-
-
-
-
-
+  <button class="btn btn-info" (click)="onCreateNames()">Create Random Names</button>
+    <p *ngFor="let name of names">{{ name }}</p>
 
 </div>
 

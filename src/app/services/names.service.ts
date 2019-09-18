@@ -19,4 +19,9 @@ export class NamesService {
     return this.http.get<string>("https://localhost:50000/api/values/create", { withCredentials: true });
  }
 
+ createNames(count: number){
+
+  return this.http.post<string[]>("https://localhost:50000/api/values/createNames", count, { withCredentials: true });
+}
+
 }
