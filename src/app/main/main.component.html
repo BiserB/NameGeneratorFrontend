@@ -1,45 +1,17 @@
 <div class="content">
 
-  <div > 
-
-    <form #f="ngForm" (ngSubmit)="onSubmit()">
-      Username: Admin<br>
-      <input type="text" name="username" [(ngModel)]="loginModel.username" required>
-      <br>
-      <br>
-      Password: PASSword@123<br>
-      <input type="text" name="password" [(ngModel)]="loginModel.password" required>
-      <br><br>
-      <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
-    </form>
-    <br>
-    <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
-    <br>
-    <br>
-    <form #fetch="ngForm" (ngSubmit)="onFetch()">  
-      <input type="submit" value="Fetch">
-    </form>
-    <strong>
-      Usernames:
-    </strong>
-    <p *ngFor="let name of names">{{ name }}</p>
-  
-    <br>
-    <br>
-  
-    <button class="btn btn-info" (click)="onCreateName()">Create Random Name</button>
-    <p>{{ randomName }}</p>
-
-  </div>
+  <button class="btn btn-info" (click)="onCreateName()">Create Random Name</button>
+  <p>{{ randomName }}</p>
 
   <div class="row">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 
@@ -48,7 +20,8 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Dropdown
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -60,15 +33,28 @@
           </li>
 
         </ul>
-        
-        
+
+
       </div>
     </nav>
 
   </div>
 
   <button class="btn btn-info" (click)="onCreateNames()">Create Random Names</button>
-    <p *ngFor="let name of names">{{ name }}</p>
+  <p *ngFor="let name of names">{{ name }}</p>
 
 </div>
 
+<button (click)="openModal('custom-modal-2')">Open Modal 2</button>
+
+
+
+<modal id="custom-modal-2" class="modal">
+  <div>
+    <div class="modal-body">
+      <h1 style="height:1000px">A Tall Custom Modal!</h1>
+      <button (click)="closeModal('custom-modal-2');">Close</button>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>

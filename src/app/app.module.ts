@@ -6,11 +6,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import { AuthService } from './services/auth.service';
+import { ModalService } from './services/modal.service';
+import { NamesService } from './services/names.service';
+import { ModalComponent } from './directives/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +23,11 @@ import { MainComponent } from './main/main.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ 
+    AuthService, 
+    NamesService, 
+    ModalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

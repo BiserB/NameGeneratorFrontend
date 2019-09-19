@@ -3,6 +3,7 @@ import { NamesService } from '../services/names.service';
 import { Observable, Subscription } from 'rxjs';
 import { LoginModel } from '../models/login.model';
 import { AuthService } from '../services/auth.service';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'app-main',
@@ -17,36 +18,39 @@ export class MainComponent implements OnInit, OnDestroy {
   loginModel: LoginModel = new LoginModel();
   randomName: string = "zzz";
 
-  constructor(private namesService: NamesService, private authService: AuthService) { }
+  constructor(
+    private namesService: NamesService,
+    private authService: AuthService,
+    private modalService: ModalService) { }
 
   ngOnInit() {
-    
+
   }
 
-  onSubmit(){
+  onSubmit() {
 
     this.authService.login(this.loginModel)
       .subscribe(res => {
         console.log("res..", res);
       },
-      error => {
-        console.log("error..", error)
-      });
+        error => {
+          console.log("error..", error)
+        });
   }
 
-  onLogout(){
+  onLogout() {
 
     this.subscription.add(
       this.authService.logout()
         .subscribe(
           res => {
-            
+
           }
         )
-      );
+    );
   }
 
-  onFetch(){
+  onFetch() {
 
     this.subscription.add(this.namesService.getNames()
       .subscribe(res => {
@@ -54,7 +58,7 @@ export class MainComponent implements OnInit, OnDestroy {
       }));
   }
 
-  onCreateName(){
+  onCreateName() {
 
     this.subscription.add(this.namesService.createName()
       .subscribe(res => {
@@ -63,7 +67,7 @@ export class MainComponent implements OnInit, OnDestroy {
       }));
   }
 
-  onCreateNames(){
+  onCreateNames() {
 
     this.subscription.add(this.namesService.createNames(5)
       .subscribe(res => {
@@ -75,6 +79,14 @@ export class MainComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
 
     this.subscription.unsubscribe();
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
 }
