@@ -52,7 +52,8 @@
           <a href="#">Features</a>
         </li>
         <li>
-          <a href="#" (click)="openModal('custom-modal-1')">SIGN IN</a>
+          <a *ngIf="!isLoggedIn" href="#" (click)="openModal('login-modal')">SIGN IN</a>
+          <a *ngIf="isLoggedIn" href="#" (click)="openModal('login-modal')">Profile</a>
         </li>
       </ul>
 
@@ -60,35 +61,36 @@
 
   </nav>
 
-  <modal id="custom-modal-1" class="modal">
+  <modal id="login-modal">
 
-      <div class="modal-body">
+    <div class="modal">
 
-        <div class="row">
-          <div class="col-sm-10">
-              <form #f="ngForm" (ngSubmit)="onSubmit()">
-                  Username: Admin<br>
-                  <input type="text" name="username" [(ngModel)]="loginModel.username" required>
-                  <br>
-                  <br>
-                  Password: PASSword@123<br>
-                  <input type="text" name="password" [(ngModel)]="loginModel.password" required>
-                  <br><br>
-                  <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
-                </form>
+        <div class="modal-body">
+
+              <form #f="ngForm" (ngSubmit)="onLogin()">
+                Username: Admin<br>
+                <input type="text" name="username" [(ngModel)]="loginModel.username" required>
                 <br>
-                <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
                 <br>
-                <br>  
+                Password: PASSword@123<br>
+                <input type="text" name="password" [(ngModel)]="loginModel.password" required>
+                <br><br>
+                <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
+              </form>
+              <br>
+              <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
+              <br>
+              <br>
+
+              <button (click)="closeModal('login-modal');" class="ml-auto">Close</button>
+                  
           </div>
-          <div class="col-sm-2">
-              <button (click)="closeModal('custom-modal-1');" class="ml-auto">Close</button>
-          </div>
-        </div>  
-      </div>
+
+    </div>
     
-      <div class="modal-background"></div>
-    </modal>
+
+    <div class="modal-background"></div>
+  </modal>
 
   <app-main></app-main>
 
