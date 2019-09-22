@@ -161,4 +161,24 @@ modal .modal-background {
   z-index: 900;
 }
 
+/***************** Profile ***************/
+
+.green {
+  color: 
+  #1ABB9C;
+}
+
+.profile-figure {
+  display: inline-block;
+  border: 1px solid;
+  width: 48px;
+  height: 48px;
+  margin: 5px 10px 5px 0;
+  border-radius: 50%;
+  padding: 10px 13px
+}
+
+.profile-figure i{
+  font-size: 30px;
+}
 
