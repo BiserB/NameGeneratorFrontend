@@ -1,0 +1,31 @@
+
+<modal id="login-modal">
+
+  <div class="modal">
+
+      <div class="modal-body">
+
+            <form #f="ngForm" (ngSubmit)="onLogin()">
+              Username: Admin<br>
+              <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+              <br>
+              <br>
+              Password: PASSword@123<br>
+              <input type="text" name="password" [(ngModel)]="loginModel.password" required>
+              <br><br>
+              <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
+            </form>
+            <br>
+            <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
+            <br>
+            <br>
+
+            <button (click)="closeModal('login-modal');" class="ml-auto">Close</button>
+                
+        </div>
+
+  </div>
+  
+
+  <div class="modal-background"></div>
+</modal>

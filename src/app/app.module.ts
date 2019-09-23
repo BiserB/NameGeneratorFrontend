@@ -10,12 +10,14 @@ import { AuthService } from './services/auth.service';
 import { ModalService } from './services/modal.service';
 import { NamesService } from './services/names.service';
 import { ModalComponent } from './directives/modal/modal.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ModalComponent
+    ModalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
