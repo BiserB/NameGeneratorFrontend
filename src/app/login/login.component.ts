@@ -33,6 +33,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  onNavigate(){
+    console.log("navigate..");
+    this.router.navigate(['/'] );
+  }
+
   onLogin() {
     this.authService.login(this.loginModel)
       .subscribe(
