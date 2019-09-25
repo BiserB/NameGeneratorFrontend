@@ -1,33 +1,34 @@
+<div id="login-modal">
 
-<modal id="login-modal">
+  <div id="login-modal-content">
 
-  <div class="modal">
-
-      <div class="modal-body">
-
-            <form #f="ngForm" (ngSubmit)="onLogin()">
-              Username: Admin<br>
-              <input type="text" name="username" [(ngModel)]="loginModel.username" required>
-              <br>
-              <br>
-              Password: PASSword@123<br>
-              <input type="text" name="password" [(ngModel)]="loginModel.password" required>
-              <br><br>
-              <input class="btn btn-secondary" type="submit" [disabled]="!f.valid" value="Login">
-            </form>
-            <br>
-            <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
-            <br>
-            <br>
-
-            <button (click)="onNavigate()" class="ml-auto">Close</button>
-                
-        </div>
-
-  </div>  
-
-      <a (click)="onNavigate()" class="modal-background"> 
-
+    <div class="text-right">
+      <a (click)="onNavigate()">
+        <i class="fa fa-lg fa-times" aria-hidden="true"></i>
       </a>
+    </div>
 
-</modal>
+    <form #f="ngForm" (ngSubmit)="onLogin()">
+
+      <div class="form-group">
+        <label for="username">Username: Admin</label>
+        <input id="username" name="username" type="text" [(ngModel)]="loginModel.username" class="form-control"
+          placeholder="Enter username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password: PASSword@123</label>
+        <input id="password" name="password" type="password" [(ngModel)]="loginModel.password" class="form-control"
+          placeholder="Enter password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Login</button>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-secondary" (click)="onLogout()">Logout</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
