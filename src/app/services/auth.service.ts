@@ -11,7 +11,7 @@ export class AuthService {
 
   isLoggedId(){
 
-    return this.http.get<boolean>("https://localhost:50000/api/auth/isLoggedIn", { withCredentials: true });
+    return this.http.get<boolean>("https://localhost:50000/api/auth/isLoggedIn", { withCredentials: true })
   }
 
   login(model: LoginModel){
